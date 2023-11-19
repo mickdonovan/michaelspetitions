@@ -1,0 +1,60 @@
+table {
+    border: none;
+    border-collapse: collapse;
+    border-color: #F0F0F0;
+	margin-left: auto;
+    margin-right: auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+body {background-color: #F0F0F0;}
+
+/*th, td {padding: 8px;
+        border: 1px solid black;}
+*/
+th {background-color: lightblue; }
+
+input {
+  background-color: lightblue;
+  color: darkblue;
+  padding: 14px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+button {
+    background-color: lightblue;
+    color: darkblue;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+h1 {text-align: center;
+    color: darkblue;
+}
+
+h2 {text-align: center;
+    color: black;
+}
+
+h3 {text-align: center;
+    color: black;
+}
+
+textarea {
+    vertical-align: top;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
