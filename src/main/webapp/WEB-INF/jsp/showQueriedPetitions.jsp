@@ -12,7 +12,7 @@
     <!-- Display the initial authentication page for the employee -->
     <meta charset="UTF-8">
     <title>Sign our Petition!</title>
-    <link href="../style.css" rel="stylesheet" media="all" />
+    <style> <%@include file="../style.css" %> </style>
 </head>
 <body>
 
