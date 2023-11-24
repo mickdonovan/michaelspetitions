@@ -15,17 +15,18 @@ body {background-color: #F0F0F0;}
 */
 th {background-color: lightblue; }
 
-input {
-  background-color: lightblue;
-  color: darkblue;
-  padding: 14px 20px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 12px;
-  font-weight: bold;
-  font-family: "Times New Roman", Times, serif;
+input[type=button], input[type=submit], input[type=file]::file-selector-button {
+    background-color: lightblue;
+    color: darkblue;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    text: bold;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
 }
 
 button {

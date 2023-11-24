@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-
 <html>
 <head>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <!-- Display the initial authentication page for the employee -->
     <meta charset="UTF-8">
     <title>Create a Petition</title>
-    <link href="../style.css" rel="stylesheet" media="all"/>
+    <style> <%@include file="../style.css" %> </style>
 </head>
 <body>
 
