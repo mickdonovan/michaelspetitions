@@ -12,7 +12,6 @@ public class MyController {
 
     ArrayList<Person> personList = new ArrayList<>();
     ArrayList<Petition> petitionList = new ArrayList<>();
-
     int runningPetitionId;
 
     int petitionBeingSigned;
@@ -21,6 +20,44 @@ public class MyController {
 
     @RequestMapping(value = "/start", method = RequestMethod.GET)
     public String sign(Model model) {
+             Person michaelO = new Person();
+             michaelO.setName("Michael O Donovan");
+             michaelO.setEmail("michael@gmail.com");
+
+             Person maryO = new Person();
+             maryO.setName("Mary O Brien");
+             maryO.setEmail("mary@gmail.com");
+
+             Petition whales = new Petition();
+             whales.setId(0);
+             whales.setTitle("Save the Whales");
+             whales.setDescription("A campaign to end whale hunting worldwide.");
+
+             whales.personList.add(michaelO);
+             whales.personList.add(maryO);
+
+             petitionList.add(whales);
+
+            Person davidB = new Person();
+            davidB.setName("David Banner");
+            davidB.setEmail("david@gmail.com");
+
+            Person mollyB = new Person();
+            mollyB.setName("Molly Bloom");
+            mollyB.setEmail("molly@gmail.com");
+
+            Petition peace = new Petition();
+            peace.setId(1);
+            peace.setTitle("Peace in the World");
+            peace.setDescription("A campaign to work towards world peace.");
+
+            peace.personList.add(davidB);
+            peace.personList.add(mollyB);
+            petitionList.add(peace);
+
+            runningPetitionId=1;
+
+
              String test = "Testing 1 2 3";
               model.addAttribute("test", test);
               return "createPetition";
@@ -102,6 +139,7 @@ public class MyController {
 
         model.put("chosenPetition", chosenPetition);
         model.put("personList",chosenPetition.personList);
+        petitionBeingSigned= chosenPetition.getId();
         return "signPetition";
     }
     @RequestMapping(value = "/processSignature", method = RequestMethod.POST)
@@ -113,7 +151,7 @@ public class MyController {
 
         for (Petition petition : petitionList) {
             if (petition.id == petitionBeingSigned) {
-                System.out.println("Found a match here");
+                System.out.println("Found a match here" + petition.getTitle() + petition.getId());
                 chosenPetition = petition;
             }
         }
