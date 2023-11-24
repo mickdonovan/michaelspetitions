@@ -9,10 +9,8 @@
     <!-- Display the initial authentication page for the employee -->
     <meta charset="UTF-8">
     <title>Query Petitions</title>
-    <link href="../style.css" rel="stylesheet" media="all" />
+    <style> <%@include file="../style.css" %> </style>
 </head>
-
-
 
 <table style="border-style: none">
     <tbody>

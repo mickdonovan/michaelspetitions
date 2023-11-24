@@ -31,7 +31,7 @@
             <tr>
             <td>
                 <h3>Description</h3>
-                <textarea rows = "3" id = "description" cols = "50" name = "description" style="font-family: 'Times New Roman'; font-size: medium" required>
+                <textarea rows = "3" id = "description" cols = "50" name = "description" required>
                 </textarea>
             </td>
             </tr>
