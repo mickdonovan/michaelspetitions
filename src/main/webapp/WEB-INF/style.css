@@ -1,5 +1,5 @@
 table {
-    border: none;
+    border-style: solid;
     border-collapse: collapse;
     border-color: #F0F0F0;
 	margin-left: auto;
@@ -10,9 +10,6 @@ table {
 
 body {background-color: #F0F0F0;}
 
-/*th, td {padding: 8px;
-        border: 1px solid black;}
-*/
 th {background-color: lightblue; }
 
 input[type=button], input[type=submit], input[type=file]::file-selector-button {

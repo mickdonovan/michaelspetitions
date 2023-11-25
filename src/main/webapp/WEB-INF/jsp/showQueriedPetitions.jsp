@@ -26,24 +26,24 @@
 
 <br/>
 
-<table border="1">
-    <thead>
+<table style="border: 1px solid black;">
+    <thead style="border: 1px solid black;" >
     <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Link to Petition</th>
+        <th style="border: 1px solid black;">#</th>
+        <th style="border: 1px solid black;">Name</th>
+        <th style="border: 1px solid black;">Description</th>
+        <th style="border: 1px solid black;">Link to Petition</th>
     </tr>
     </thead>
     <tbody>
     <c:set var="i" value="1" />
     <!-- Access customer details from the attribute 'customers' - the servlet ArrayLIst-->
     <c:forEach items="${queryOutput}" var="petition">
-        <tr>
-            <td>${i}</td>
-            <td>${petition.title}</td>
-            <td>${petition.description}</td>
-            <td><a href=/signPetition?petitionId=${petition.id}>Sign Petition</a></td>
+        <tr style="border: 1px solid black;">
+            <td style="border: 1px solid black;">${i}</td>
+            <td style="border: 1px solid black;">${petition.title}</td>
+            <td style="border: 1px solid black;">${petition.description}</td>
+            <td style="border: 1px solid black;"><a href=/signPetition?petitionId=${petition.id}>Sign Petition</a></td>
         </tr>
         <c:set var="i" value="${i+1}" />
     </c:forEach>
