@@ -29,7 +29,7 @@ public class MyController {
              maryO.setEmail("mary@gmail.com");
 
              Petition whales = new Petition();
-             whales.setId(0);
+             whales.setId(runningPetitionId++);
              whales.setTitle("Save the Whales");
              whales.setDescription("A campaign to end whale hunting worldwide.");
 
@@ -47,16 +47,13 @@ public class MyController {
             mollyB.setEmail("molly@gmail.com");
 
             Petition peace = new Petition();
-            peace.setId(1);
+            peace.setId(runningPetitionId++);
             peace.setTitle("Peace in the World");
             peace.setDescription("A campaign to work towards world peace.");
 
             peace.personList.add(davidB);
             peace.personList.add(mollyB);
             petitionList.add(peace);
-
-            runningPetitionId=1;
-
 
              String test = "Testing 1 2 3";
               model.addAttribute("test", test);

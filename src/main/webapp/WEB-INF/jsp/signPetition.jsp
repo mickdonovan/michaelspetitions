@@ -27,12 +27,12 @@
     </tbody>
 </table>
 
-<table border="1">
+<table style="border: 1px solid black;">
     <thead>
-    <tr>
-        <th>Count</th>
-        <th>Name</th>
-        <th>Email</th>
+    <tr style="border: 1px solid black;">
+        <th style="border: 1px solid black;">Count</th>
+        <th style="border: 1px solid black;">Name</th>
+        <th style="border: 1px solid black;">Email</th>
     </tr>
     </thead>
 <tbody>
@@ -40,10 +40,10 @@
 <c:set var="i" value="1" />
 <!-- Access customer details from the attribute 'customers' - the servlet ArrayLIst-->
 <c:forEach items="${personList}" var="person">
-    <tr>
-        <td>${i}</td>
-        <td>${person.name}</td>
-        <td>${person.email}</td>
+    <tr style="border: 1px solid black;">
+        <td style="border: 1px solid black;">${i}</td>
+        <td style="border: 1px solid black;">${person.name}</td>
+        <td style="border: 1px solid black;">${person.email}</td>
     </tr>
     <c:set var="i" value="${i+1}" />
 </c:forEach>
