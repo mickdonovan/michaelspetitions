@@ -42,6 +42,10 @@ pipeline {
           success {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
 
+                input {
+                  message "Should we continue with the deployment?"
+                }
+
                 sshagent(['my-tomcat']) {
                           sh """
                           scp -o StrictHostKeyChecking=no target/michaelspetitions.war
