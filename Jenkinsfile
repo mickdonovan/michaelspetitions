@@ -8,7 +8,7 @@ pipeline (
         }
         stage("GetProject"){
             steps {
-                git "https://github/com/mickdonovan/michaelspetitions.git"
+                git "https://github.com/mickdonovan/michaelspetitions.git"
             }
         }
 
