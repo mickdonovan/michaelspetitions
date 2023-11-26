@@ -37,23 +37,27 @@ pipeline {
                //}
         //}
 
-        stage("Package") {
-                archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
+        stage("Package"){
+              steps {
+                    archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
+              }
         }
 
-        stage("Deploy") {
-                input {
-                   message: "Should we continue with the deployment?"
-                   ok "Yes"
-                }
+        stage("Deploy"){
+                steps {
+                    input {
+                        message: "Should we continue with the deployment?"
+                        ok "Yes"
+                        }
 
-               sshagent(['my-tomcat']) {
-                       sh """
-                       scp -o StrictHostKeyChecking=no target/michaelspetitions.war
-                       ubuntu@172.17.0.1:/opt/tomcat/webapps/
-                       ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
-                       ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
-                       """
+                    sshagent(['my-tomcat']) {
+                        sh """
+                        scp -o StrictHostKeyChecking=no target/michaelspetitions.war
+                        ubuntu@172.17.0.1:/opt/tomcat/webapps/
+                        ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
+                        ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
+                        """
+                        }
                }
         }
     }
