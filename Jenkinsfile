@@ -31,12 +31,6 @@ pipeline {
               }
         }
 
-        //stage("Execute") {
-            //steps {
-                //sh "mvn  spring-boot:run -Dspring-boot.run.jvmArguments=' -Dserver-port=9090'"
-               //}
-        //}
-
         stage("Package"){
               steps {
                     archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
@@ -59,23 +53,11 @@ pipeline {
         }
     }
 
-    //post{
-    //      success {
-    //           archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
-    //
-    //            input {
-    //              message: "Should we continue with the deployment?"
-    //              ok "Yes"
-    //            }
-    //
-    //            sshagent(['my-tomcat']) {
-    //                      sh """
-    //                      scp -o StrictHostKeyChecking=no target/michaelspetitions.war
-    //                      ubuntu@172.17.0.1:/opt/tomcat/webapps/
-    //                      ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
-    //                      ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
-    //                       """
-    //                      }
-    //     }
-    //}
+    post{
+          aborted {
+                sh "echo Exited the deployment stage running the application locally instead..."
+                sh "mvn  spring-boot:run -Dspring-boot.run.jvmArguments=' -Dserver-port=9090'"
+
+         }
+    }
 }
