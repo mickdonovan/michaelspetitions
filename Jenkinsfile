@@ -25,6 +25,12 @@ pipeline {
             }
         }
 
+        stage("Test"){
+              steps {
+                   sh "echo Executing tests here..."
+              }
+        }
+
         //stage("Execute") {
             //steps {
                 //sh "mvn  spring-boiot:run -Dsprint-boot.run.jvmArguments=' -Dserver-port=9090'"
