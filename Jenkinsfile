@@ -7,6 +7,7 @@ pipeline {
                 sh "java --version"
             }
         }
+
         stage("GetProject"){
             steps {
                 git "https://github.com/mickdonovan/michaelspetitions.git"
