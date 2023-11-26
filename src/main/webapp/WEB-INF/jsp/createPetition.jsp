@@ -14,7 +14,7 @@
 <table>
     <tbody>
     <tr>
-        <td><h1>Create a new petition for your important cause... testing!</h1></td>
+        <td><h1>Create a new petition for your important cause... DEMO!</h1></td>
     </tr>
     </tbody>
 </table>
