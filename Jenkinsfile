@@ -36,24 +36,45 @@ pipeline {
                 //sh "mvn  spring-boot:run -Dspring-boot.run.jvmArguments=' -Dserver-port=9090'"
                //}
         //}
-    }
 
-    post{
-          success {
+        stage("Package") {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
+        }
 
+        stage("Deploy") {
                 input {
-                  message: "Should we continue with the deployment?"
+                   message: "Should we continue with the deployment?"
+                   ok "Yes"
                 }
 
-                sshagent(['my-tomcat']) {
-                          sh """
-                          scp -o StrictHostKeyChecking=no target/michaelspetitions.war
-                          ubuntu@172.17.0.1:/opt/tomcat/webapps/
-                          ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
-                          ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
-                           """
-                          }
-          }
+               sshagent(['my-tomcat']) {
+                       sh """
+                       scp -o StrictHostKeyChecking=no target/michaelspetitions.war
+                       ubuntu@172.17.0.1:/opt/tomcat/webapps/
+                       ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
+                       ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
+                       """
+               }
+        }
     }
+
+    //post{
+    //      success {
+    //           archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
+    //
+    //            input {
+    //              message: "Should we continue with the deployment?"
+    //              ok "Yes"
+    //            }
+    //
+    //            sshagent(['my-tomcat']) {
+    //                      sh """
+    //                      scp -o StrictHostKeyChecking=no target/michaelspetitions.war
+    //                      ubuntu@172.17.0.1:/opt/tomcat/webapps/
+    //                      ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
+    //                      ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
+    //                       """
+    //                      }
+    //     }
+    //}
 }
