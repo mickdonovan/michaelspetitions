@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+// Controller class to manage processing and navigation between pages
 @Controller
 public class MyController {
 
@@ -20,6 +21,7 @@ public class MyController {
 
     @RequestMapping(value = "/start", method = RequestMethod.GET)
     public String sign(Model model) {
+             //Create some initial default data
              Person michaelO = new Person();
              michaelO.setName("Michael O Donovan");
              michaelO.setEmail("michael@gmail.com");
@@ -55,9 +57,8 @@ public class MyController {
             peace.personList.add(mollyB);
             petitionList.add(peace);
 
-             String test = "Testing 1 2 3";
-              model.addAttribute("test", test);
-              return "createPetition";
+            //Go to the default page createPetition
+            return "createPetition";
     }
 
     @RequestMapping(value = "/signPetition", method = RequestMethod.POST)
