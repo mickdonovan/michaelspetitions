@@ -29,10 +29,10 @@ pipeline {
                 //sh "mvn  spring-boiot:run -Dsprint-boot.run.jvmArguments=' -Dserver-port=9090'"
                //}
         //}
-
-        post {
-            success {
+    }
+    post {
+          success {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
-            }
-        }
+          }
+    }
 }
