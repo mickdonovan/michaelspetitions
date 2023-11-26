@@ -33,7 +33,7 @@ pipeline {
 
         //stage("Execute") {
             //steps {
-                //sh "mvn  spring-boiot:run -Dsprint-boot.run.jvmArguments=' -Dserver-port=9090'"
+                //sh "mvn  spring-boot:run -Dspring-boot.run.jvmArguments=' -Dserver-port=9090'"
                //}
         //}
     }
