@@ -56,8 +56,7 @@ pipeline {
     post{
           aborted {
                 sh "echo Exited the deployment stage running the application locally instead..."
-                sh "mvn  spring-boot:run -Dspring-boot.run.jvmArguments=' -Dserver-port=9090'"
-
+                sh "mvn  spring-boot:run -Dspring-boot.run.jvmArguments=' -Dserver-port=8080'"
          }
     }
 }
