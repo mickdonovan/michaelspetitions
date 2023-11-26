@@ -48,7 +48,7 @@ pipeline {
                           ubuntu@172.17.0.1:/opt/tomcat/webapps/
                           ssh ubuntu@172.17.0.1 /opt/tomcat/bin/shutdown.sh
                           ssh ubuntu@172.17.0.1 /opt/tomcat/bin/startup.sh
-                           ""
+                           """
                           }
           }
     }
