@@ -43,7 +43,7 @@ pipeline {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
 
                 input {
-                  message "Should we continue with the deployment?"
+                  message: "Should we continue with the deployment?"
                 }
 
                 sshagent(['my-tomcat']) {
