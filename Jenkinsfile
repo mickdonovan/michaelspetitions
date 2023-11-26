@@ -1,5 +1,6 @@
 pipeline {
     agent any
+
     stages{
         stage('WhichJava') {
             steps {
@@ -12,7 +13,7 @@ pipeline {
             }
         }
 
-        stage("Build"{
+        stage("Build"){
             steps {
                 sh "mvn clean:clean"
 
@@ -30,7 +31,8 @@ pipeline {
                //}
         //}
     }
-    post {
+
+    post{
           success {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'target/michaelspetitions.war'
           }
