@@ -21,44 +21,44 @@ public class MyController {
 
     @RequestMapping(value = "/start", method = RequestMethod.GET)
     public String sign(Model model) {
-             //Create some initial default data
-             Person michaelO = new Person();
-             michaelO.setName("Michael O Donovan");
-             michaelO.setEmail("michael@gmail.com");
+        //Create some initial default data
+        Person michaelO = new Person();
+        michaelO.setName("Michael O Donovan");
+        michaelO.setEmail("michael@gmail.com");
 
-             Person maryO = new Person();
-             maryO.setName("Mary O Brien");
-             maryO.setEmail("mary@gmail.com");
+        Person maryO = new Person();
+        maryO.setName("Mary O Brien");
+        maryO.setEmail("mary@gmail.com");
 
-             Petition whales = new Petition();
-             whales.setId(runningPetitionId++);
-             whales.setTitle("Save the Whales");
-             whales.setDescription("A campaign to end whale hunting worldwide.");
+        Petition whales = new Petition();
+        whales.setId(runningPetitionId++);
+        whales.setTitle("Save the Whales");
+        whales.setDescription("A campaign to end whale hunting worldwide.");
 
-             whales.personList.add(michaelO);
-             whales.personList.add(maryO);
+        whales.personList.add(michaelO);
+        whales.personList.add(maryO);
 
-             petitionList.add(whales);
+        petitionList.add(whales);
 
-            Person davidB = new Person();
-            davidB.setName("David Banner");
-            davidB.setEmail("david@gmail.com");
+        Person davidB = new Person();
+        davidB.setName("David Banner");
+        davidB.setEmail("david@gmail.com");
 
-            Person mollyB = new Person();
-            mollyB.setName("Molly Bloom");
-            mollyB.setEmail("molly@gmail.com");
+        Person mollyB = new Person();
+        mollyB.setName("Molly Bloom");
+        mollyB.setEmail("molly@gmail.com");
 
-            Petition peace = new Petition();
-            peace.setId(runningPetitionId++);
-            peace.setTitle("Peace in the World");
-            peace.setDescription("A campaign to work towards world peace.");
+        Petition peace = new Petition();
+        peace.setId(runningPetitionId++);
+        peace.setTitle("Peace in the World");
+        peace.setDescription("A campaign to work towards world peace.");
 
-            peace.personList.add(davidB);
-            peace.personList.add(mollyB);
-            petitionList.add(peace);
+        peace.personList.add(davidB);
+        peace.personList.add(mollyB);
+        petitionList.add(peace);
 
-            //Go to the default page createPetition
-            return "createPetition";
+        //Go to the default page createPetition
+        return "createPetition";
     }
 
     @RequestMapping(value = "/signPetition", method = RequestMethod.POST)
@@ -111,8 +111,8 @@ public class MyController {
             System.out.println("This one is matched" + petition.getTitle());
         }
 
-            model.put("queryOutput", queryOutput);
-            return "showQueriedPetitions";
+        model.put("queryOutput", queryOutput);
+        return "showQueriedPetitions";
     }
 
     @RequestMapping(value = "/gotoQueryPetitions", method = RequestMethod.POST)
@@ -136,10 +136,11 @@ public class MyController {
         }
 
         model.put("chosenPetition", chosenPetition);
-        model.put("personList",chosenPetition.personList);
-        petitionBeingSigned= chosenPetition.getId();
+        model.put("personList", chosenPetition.personList);
+        petitionBeingSigned = chosenPetition.getId();
         return "signPetition";
     }
+
     @RequestMapping(value = "/processSignature", method = RequestMethod.POST)
     public String processSignature(Person person) {
         System.out.println("Title= " + person.getName());
