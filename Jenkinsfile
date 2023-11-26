@@ -45,10 +45,7 @@ pipeline {
 
         stage("Deploy"){
                 steps {
-                    input {
-                        message: "Should we continue with the deployment?"
-                        ok "Yes"
-                        }
+                    input Should we continue with the deployment?
 
                     sshagent(['my-tomcat']) {
                         sh """
